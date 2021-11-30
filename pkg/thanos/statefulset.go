@@ -435,6 +435,8 @@ func makeStatefulSetSpec(tr *monitoringv1.ThanosRuler, config Config, ruleConfig
 				TerminationGracePeriodSeconds: &terminationGracePeriod,
 				Containers:                    containers,
 				InitContainers:                tr.Spec.InitContainers,
+				DNSConfig:                     tr.Spec.DNSConfig,
+				DNSPolicy:                     tr.Spec.DNSPolicy,
 				Volumes:                       trVolumes,
 				SecurityContext:               tr.Spec.SecurityContext,
 				Tolerations:                   tr.Spec.Tolerations,
